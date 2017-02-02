@@ -1,4 +1,4 @@
-package com.Allstate.Home;
+package com.allstate.home;
 
 import org.junit.After;
 import org.junit.Before;

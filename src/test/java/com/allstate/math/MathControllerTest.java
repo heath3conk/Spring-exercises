@@ -1,4 +1,4 @@
-package com.allstate.home;
+package com.allstate.math;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,16 +12,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(HomeController.class)
-public class HomeControllerTest {
+@WebMvcTest(MathController.class)
+public class MathControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void shouldReturnHelloMessageFromHomeMethod() throws Exception {
-        this.mvc.perform(get("/"))
+    public void shouldReturnSquaredNumberFromPath() throws Exception {
+        this.mvc.perform(get("/math/square/4"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.message", is("Hello Spring")));
+                .andExpect(jsonPath("$.square", is(16)));
     }
+
+
+
 }

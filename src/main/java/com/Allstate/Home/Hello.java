@@ -1,4 +1,4 @@
-package com.Allstate.Home;
+package com.allstate.home;
 
 public class Hello {
     private String message;

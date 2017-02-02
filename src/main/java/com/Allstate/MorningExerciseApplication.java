@@ -1,4 +1,4 @@
-package com.Allstate;
+package com.allstate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

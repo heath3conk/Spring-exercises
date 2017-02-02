@@ -1,4 +1,4 @@
-package com.allstate.home;
+package com.allstate.index;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,21 +7,21 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
+import static org.junit.Assert.*;
+
 @RunWith(SpringRunner.class)
-@WebMvcTest(HomeController.class)
-public class HomeControllerTest {
+@WebMvcTest(IndexController.class)
+public class IndexControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    public void shouldReturnHelloMessageFromHomeMethod() throws Exception {
-        this.mvc.perform(get("/"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.message", is("Hello Spring")));
+    public void testIndexEndpoint() throws Exception {
+        this.mvc.perform(get("/vehicles?year=1997&doors=2"))
+                .andExpect(status().isOk());
     }
 }
